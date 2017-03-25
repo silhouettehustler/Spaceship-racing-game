@@ -6,17 +6,17 @@ import java.awt.*;
  */
 public class Frame extends JFrame {
 
-    public Frame(JPanel panel) {
+    public Frame() {
         this.setSize(new Dimension(850, 650));
-        this.getContentPane().add(panel);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setTitle("Spaceship Selection Menu");
+        this.setIconImage(new ImageIcon("images/1.png").getImage());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public void Show() {
-        this.setVisible(true);
+    public void addPanel(JPanel panel){
+        this.getContentPane().add(panel);
+        this.setTitle(panel.getName());
     }
 
 
