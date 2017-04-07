@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 import static java.lang.StrictMath.cos;
 import static java.lang.StrictMath.sin;
@@ -9,7 +7,7 @@ import static java.lang.StrictMath.sin;
 /**
  * Created by G33 on 24/03/2017.
  */
-public class Ship implements KeyListener{
+public class Ship{
 
     private int id;
     private String name;
@@ -31,20 +29,17 @@ public class Ship implements KeyListener{
 
         //set initial values
         speed = 0;
-        maxSpeed = 100;
+        maxSpeed = 20;
         currentIcon = icons[4];
-        //TODO sort this
-        //currentXLocation = getLocation().x;
-        //currentYLocation = getLocation().y;
         currentAngle = 0;
     }
 
     private void slowDown(){
-        if (speed != 0){this.speed -= 1;}
+        if (speed != 0){this.speed -= 2;}
     }
 
     private void speedUp(){
-        if (speed != maxSpeed){this.speed += 1;}
+        if (speed != maxSpeed){this.speed += 2;}
     }
 
     private void rotateLeft(){
@@ -75,40 +70,12 @@ public class Ship implements KeyListener{
     public void drawShip(Graphics g){
 
             if (speed > 0){
+
                 currentXLocation +=  speed * cos(Math.toRadians(currentAngle)) * 0.08;
                 currentYLocation +=  speed * sin(Math.toRadians(currentAngle)) * 0.08;
             }
 
         g.drawImage(currentIcon.getImage(),currentXLocation,currentYLocation,null);
-
-    }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-
-        switch (e.getKeyChar()){
-            case 'w':
-                speedUp();
-                break;
-            case 'd':
-                rotateRight();
-                break;
-            case 'a':
-                rotateLeft();
-                break;
-            case 's':
-                slowDown();
-                break;
-        }
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
 
     }
 }

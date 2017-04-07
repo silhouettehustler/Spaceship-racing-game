@@ -2,43 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13204658-a0a4-43d2-a167-90772ec99dfb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Arena.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Manager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/SelectionMenu.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/1.png" afterPath="$PROJECT_DIR$/images/ships/1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/10.png" afterPath="$PROJECT_DIR$/images/ships/10.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/11.png" afterPath="$PROJECT_DIR$/images/ships/11.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/12.png" afterPath="$PROJECT_DIR$/images/ships/12.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/13.png" afterPath="$PROJECT_DIR$/images/ships/13.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/14.png" afterPath="$PROJECT_DIR$/images/ships/14.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/15.png" afterPath="$PROJECT_DIR$/images/ships/15.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/16.png" afterPath="$PROJECT_DIR$/images/ships/16.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/2.png" afterPath="$PROJECT_DIR$/images/ships/2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/3.png" afterPath="$PROJECT_DIR$/images/ships/3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/4.png" afterPath="$PROJECT_DIR$/images/ships/4.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/5.png" afterPath="$PROJECT_DIR$/images/ships/5.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/6.png" afterPath="$PROJECT_DIR$/images/ships/6.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/7.png" afterPath="$PROJECT_DIR$/images/ships/7.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/8.png" afterPath="$PROJECT_DIR$/images/ships/8.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/9.png" afterPath="$PROJECT_DIR$/images/ships/9.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a1.png" afterPath="$PROJECT_DIR$/images/ships/a1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a10.png" afterPath="$PROJECT_DIR$/images/ships/a10.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a11.png" afterPath="$PROJECT_DIR$/images/ships/a11.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a12.png" afterPath="$PROJECT_DIR$/images/ships/a12.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a13.png" afterPath="$PROJECT_DIR$/images/ships/a13.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a14.png" afterPath="$PROJECT_DIR$/images/ships/a14.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a15.png" afterPath="$PROJECT_DIR$/images/ships/a15.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a16.png" afterPath="$PROJECT_DIR$/images/ships/a16.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a2.png" afterPath="$PROJECT_DIR$/images/ships/a2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a3.png" afterPath="$PROJECT_DIR$/images/ships/a3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a4.png" afterPath="$PROJECT_DIR$/images/ships/a4.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a5.png" afterPath="$PROJECT_DIR$/images/ships/a5.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a6.png" afterPath="$PROJECT_DIR$/images/ships/a6.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a7.png" afterPath="$PROJECT_DIR$/images/ships/a7.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a8.png" afterPath="$PROJECT_DIR$/images/ships/a8.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/a9.png" afterPath="$PROJECT_DIR$/images/ships/a9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frame.java" afterPath="$PROJECT_DIR$/src/Frame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ship.java" afterPath="$PROJECT_DIR$/src/Ship.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -77,9 +40,14 @@
       <file leaf-file-name="Ship.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="37" column="45" lean-forward="true" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="255">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <element signature="method#Ship#0;class#Ship#0" expanded="false" />
+                <element signature="method#rotateLeft#0;class#Ship#0" expanded="false" />
+                <element signature="method#rotateRight#0;class#Ship#0" expanded="false" />
+                <element signature="method#drawShip#0;class#Ship#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -178,20 +146,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Space-race" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Space-race" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Space-race" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -460,7 +414,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1997389" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1997389" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -859,18 +813,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Frame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -891,9 +845,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="37" column="45" lean-forward="true" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
-          <folding />
+        <state relative-caret-position="255">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="method#Ship#0;class#Ship#0" expanded="false" />
+            <element signature="method#rotateLeft#0;class#Ship#0" expanded="false" />
+            <element signature="method#rotateRight#0;class#Ship#0" expanded="false" />
+            <element signature="method#drawShip#0;class#Ship#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
