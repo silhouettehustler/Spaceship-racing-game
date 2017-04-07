@@ -1,0 +1,10 @@
+{
+  "ship":{
+    "id": 1,
+    "name":"Dark Rose"
+  },
+  "ship":{
+    "id": 2,
+    "name":"Tango 772"
+  }
+}
