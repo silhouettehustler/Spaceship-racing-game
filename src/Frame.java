@@ -11,7 +11,7 @@ public class Frame extends JFrame {
         this.setSize(new Dimension(850, 650));
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setIconImage(new ImageIcon("images/1.png").getImage());
+        this.setIconImage(new ImageIcon("images/ships/1.png").getImage());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }

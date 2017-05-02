@@ -36,11 +36,11 @@ public class Ship{
     }
 
     public void slowDown(){
-        if (speed != 0){this.speed -= 1;}
+        if (speed != 0){this.speed -= 2;}
     }
 
     public void speedUp(){
-        if (speed != maxSpeed){this.speed += 1;}
+        if (speed != maxSpeed){this.speed += 2;}
     }
 
     public void rotateLeft(){
@@ -72,7 +72,7 @@ public class Ship{
 
             if (speed > 0){
 
-                double delta = speed * 0.8;
+                double delta = speed * 0.4;
 
                 if (direction == 0){
                     currentYLocation -= 2 * delta;

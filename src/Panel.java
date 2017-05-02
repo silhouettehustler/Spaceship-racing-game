@@ -1,6 +1,10 @@
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /**
  * Created by G33 on 27/03/2017.
@@ -42,13 +46,6 @@ public class Panel extends JPanel implements ActionListener,KeyListener {
     @Override
     protected void paintComponent(Graphics g) {
 
-        //draw the panel default components
-        super.paintComponent(g);
-
-        //draw the racing arena
-        renderArena(g);
-
-
         //paint the panel according to the appropriate game state
         switch (currentState){
 
@@ -88,13 +85,16 @@ public class Panel extends JPanel implements ActionListener,KeyListener {
     }
     private void renderMainMenu(Graphics g){
 
+        //draw the panel default components
+        super.paintComponent(g);
+
         this.removeAll();
 
         g.drawImage(new ImageIcon("images/selection-menu.jpg").getImage(), 0, 0, null);
 
 
-       JButton start = renderMenuButton("Start Game",this.getWidth() / 2  -100,this.getHeight() / 2 - 80);
-       JButton exit = renderMenuButton("Exit Game",this.getWidth() / 2 -100 ,this.getHeight() / 2  - 30);
+       JButton start = customButton("Start Game",this.getWidth() / 2  -100,this.getHeight() / 2 - 80);
+       JButton exit = customButton("Exit Game",this.getWidth() / 2 -100 ,this.getHeight() / 2  - 30);
        this.add(start);
        this.add(exit);
 
@@ -109,6 +109,9 @@ public class Panel extends JPanel implements ActionListener,KeyListener {
 
     private void renderSelectionMenu(Graphics g){
 
+        //draw the panel default components
+        super.paintComponent(g);
+
         this.removeAll();
 
         g.drawImage(new ImageIcon("images/selection-menu.jpg").getImage(), 0, 0, null);
@@ -117,11 +120,11 @@ public class Panel extends JPanel implements ActionListener,KeyListener {
         if (counter == 16) counter = 1;
 
             g.drawImage(ship1[counter].getImage(),240,50,null);
-            JButton selectShip1 = renderMenuButton("SELECT",170,120);
+            JButton selectShip1 = customButton("SELECT",170,120);
             this.add(selectShip1);
 
             g.drawImage(ship2[counter].getImage(),540,50,null);
-            JButton selectShip2 = renderMenuButton("SELECT",470,120);
+            JButton selectShip2 = customButton("SELECT",470,120);
             this.add(selectShip2);
 
             selectShip1.addActionListener(e -> {
@@ -143,28 +146,45 @@ public class Panel extends JPanel implements ActionListener,KeyListener {
     }
     private void renderGame(Graphics g){
 
+        //draw the panel default components
+        super.paintComponent(g);
+
         this.removeAll();
 
+        //draw the racing arena
+        renderArena(g);
+
+        //check for collision
         if (collision()){
             currentState = gameState.GAMEOVER_STATE;
             return;
         }
 
         if (screenIsRendered == false){
-            //clear current panel
-            this.removeAll();
+
+            //set the background image
+            g.drawImage(new ImageIcon("images/selection-menu.jpg").getImage(), 0, 0, null);
+
             //draw arena
             renderArena(g);
-            //draw ships
+
         }
 
+        //render ship
         currentContextShip.render(g);
         screenIsRendered = true;
     }
 
     private void renderPause(Graphics g){
-    JLabel pauseLabel = new JLabel("PAUSE");
-    this.add(pauseLabel);
+
+        Color c1 = new Color(231, 255, 81);
+        Font font = new Font("Verdana", Font.BOLD, 30);
+
+        g.setColor( c1 );
+        g.setFont(font);
+
+        g.drawString("Press P to resume the game...",200,this.getHeight()/2 - 20);
+        g.drawLine( 50, this.getHeight() /2, this.getWidth()-50, this.getHeight()/2 );
 
     }
     private void renderGameOver(){
@@ -183,10 +203,10 @@ public class Panel extends JPanel implements ActionListener,KeyListener {
     }
     private void renderArena(Graphics  g){
 
-        Color c1 = Color.black;
+        Color c1 = new Color(24, 29, 21);
         g.setColor( c1 );
         g.fillRect( 50, 100, 750, 500 ); //surrounding space
-        Color c2 = new Color(210, 105, 30); // RGB brown mix
+        Color c2 = new Color(31, 209, 234); // RGB brown mix
         g.setColor( c2 );
         g.fillRect(200, 225, 450, 200); // asteroid
         Color c3 = Color.white;
@@ -194,12 +214,24 @@ public class Panel extends JPanel implements ActionListener,KeyListener {
         g.drawLine( 425, 500, 425, 600 ); // start line
     }
 
-    private JButton renderMenuButton(String text,int x,int y){
+    private JButton customButton(String text, int x, int y){
         JButton button = new JButton();
         button.setLayout(null);
         button.setBounds(x,y,200,40);
         button.setText(text);
-        button.setBackground(new Color(209, 255, 198));
+        button.setBackground(new Color(255, 253, 241));
+        button.setBorder(new LineBorder(Color.cyan,5));
+
+        button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                button.setBackground(new Color(18, 169, 255));
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                button.setBackground(new Color(255, 253, 241));
+            }
+        });
+
         return button;
     }
 
