@@ -16,9 +16,7 @@ public class Game {
         frame.addKeyListener(panel);
         panel.requestFocus();
 
-        //initialize timer and start it
-        Timer timer = new Timer(80,panel);
-        timer.start();
+
 
     }
 }
