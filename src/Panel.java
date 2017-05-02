@@ -62,7 +62,7 @@ public class Panel extends JPanel implements ActionListener,KeyListener {
                 renderPause(g);
                 break;
             case GAMEOVER_STATE:
-                renderGameOver();
+                renderGameOver(g);
                 break;
                 default:
                     break;
@@ -154,12 +154,7 @@ public class Panel extends JPanel implements ActionListener,KeyListener {
         //draw the racing arena
         renderArena(g);
 
-        //check for collision
-        if (collision()){
-            currentState = gameState.GAMEOVER_STATE;
-            return;
-        }
-
+        //avoid unecessary tile rendering
         if (screenIsRendered == false){
 
             //set the background image
@@ -187,7 +182,7 @@ public class Panel extends JPanel implements ActionListener,KeyListener {
         g.drawLine( 50, this.getHeight() /2, this.getWidth()-50, this.getHeight()/2 );
 
     }
-    private void renderGameOver(){
+    private void renderGameOver(Graphics g){
 
         timer.stop();
 
@@ -203,12 +198,28 @@ public class Panel extends JPanel implements ActionListener,KeyListener {
     }
     private void renderArena(Graphics  g){
 
-        Color c1 = new Color(24, 29, 21);
+        Graphics2D g2 = (Graphics2D) g;
+
+        g.drawImage(new ImageIcon("images/selection-menu.jpg").getImage(), 0, 0, null);
+
+        g2.setStroke(new BasicStroke(10));
+        g.setColor(new Color(243, 14, 0));
+        g.drawRect(50, 100, 750, 500);
+
+        Color c1 = new Color(0, 0, 0);
         g.setColor( c1 );
         g.fillRect( 50, 100, 750, 500 ); //surrounding space
-        Color c2 = new Color(31, 209, 234); // RGB brown mix
+
+        //draw border
+        g2.setStroke(new BasicStroke(4));
+        g.setColor(new Color(243, 11, 44));
+        g.drawRect(200, 225, 450, 200);
+
+        //draw asteroid
+        Color c2 = new Color(53, 194, 255);
         g.setColor( c2 );
-        g.fillRect(200, 225, 450, 200); // asteroid
+        g.fillRect(200, 225, 450, 200);
+
         Color c3 = Color.white;
         g.setColor( c3 );
         g.drawLine( 425, 500, 425, 600 ); // start line
@@ -233,27 +244,6 @@ public class Panel extends JPanel implements ActionListener,KeyListener {
         });
 
         return button;
-    }
-
-    private boolean collision() {
-
-        //arena space collider
-        Rectangle arena = new Rectangle(50, 100, 750, 500);
-        //arena asteroid collider
-        Rectangle asteroid = new Rectangle(200, 225, 450, 200);
-
-        //check for collision with asteroid
-        if (currentContextShip.getBounds().intersects(asteroid.getBounds()))
-        {
-            return true;
-        }
-        else if ( currentContextShip.getBounds().getMaxX() >= arena.getMaxX() || currentContextShip.getBounds().getMinX() <= arena.getMinX()
-                ||currentContextShip.getBounds().getMaxY() >= arena.getMaxY() || currentContextShip.getBounds().getMinY() <= arena.getMinY()){
-
-            return true;
-        }
-
-        return false;
     }
 
     @Override

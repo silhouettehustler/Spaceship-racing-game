@@ -13,6 +13,7 @@ public class Ship{
     private ImageIcon[] icons;
     private ImageIcon currentIcon;
     private int direction;
+    private boolean isCurrentCollision;
 
     public Ship(String prefix){
 
@@ -70,9 +71,18 @@ public class Ship{
 
     public void render(Graphics g){
 
+        if (isTileColission()){
+
+            if (isCurrentCollision == false){
+                speed = 0;
+                isCurrentCollision = true;
+            }
+        }
+
             if (speed > 0){
 
                 double delta = speed * 0.4;
+                isCurrentCollision = false;
 
                 if (direction == 0){
                     currentYLocation -= 2 * delta;
@@ -140,5 +150,26 @@ public class Ship{
 
         g.drawImage(currentIcon.getImage(),currentXLocation,currentYLocation,null);
 
+    }
+
+    private boolean isTileColission() {
+
+        //arena space colider
+        Rectangle arena = new Rectangle(50, 100, 750, 500);
+        //arena asteroid collider
+        Rectangle asteroid = new Rectangle(200, 225, 450, 200);
+
+        //check for collision with asteroid
+        if (this.getBounds().intersects(asteroid.getBounds()))
+        {
+            return true;
+        }
+        else if ( this.getBounds().getMaxX() >= arena.getMaxX() || this.getBounds().getMinX() <= arena.getMinX()
+                ||this.getBounds().getMaxY() >= arena.getMaxY() || this.getBounds().getMinY() <= arena.getMinY()){
+
+            return true;
+        }
+
+        return false;
     }
 }
